@@ -14,7 +14,6 @@ import com.magicapp.instagramcloneandroidkotlin.utills.Logger
 
 //In SplashActivity, user can visit to SignInActivity or MainActivity
 
-@SuppressLint("CustomSplashScreen")
 class SplashActivity : BaseActivity() {
 
     val TAG: String = SplashActivity::class.java.simpleName
@@ -64,7 +63,7 @@ class SplashActivity : BaseActivity() {
             // Get new FCM registration token
             // Save it in locally to use later
             val token = task.result
-            Logger.d(TAG, token.toString())
+            Logger.d("$TAG token:", token.toString())
             PrefsManager(this).storeDeviceToken(token.toString())
 
         })
